@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}书籍{% endblock %}
+{% block content %}
+    {% for book_1 in book_books %}
+    <h1><a>{{ book_1.title }}</a></h1>
+    {% for authorss in book_1.authors.all%}
+            <h4><a href="{% url 'author:detail' authorss.id %}">-----{{ authorss.aut_name }}</a></h4>
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

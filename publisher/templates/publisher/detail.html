@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}出版社详情{% endblock %}
+<div>
+    {% block content %}
+        <h1><a href="#">{{ pub_detail.Pub_name }}</a></h1>
+        <h5><p>{{ pub_detail.address }}</p></h5>
+         <h6><p>{{ pub_detail.website }}</p></h6>
+    {% endblock %}
+</div>

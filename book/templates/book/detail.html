@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}书籍详情{% endblock %}
+<div>
+    {% block content %}
+        <h1><p>{{ book_detail.title }}</p></h1>
+        <h4><p>{{ book_detail.publishers}}</p></h4>
+        {% for authorss in book_detail.authors.all%}
+            <h4><a href="{% url 'author:detail' authorss.id %}">{{ authorss.aut_name }}</a></h4>
+        {% endfor %}
+    {% endblock %}
+</div>
+{% block footer %}{% endblock %}

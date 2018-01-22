@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Book{% endblock %}</title>
+</head>
+{% block style %}
+    <style>
+        *{
+            text-align: center;
+            text-decoration: none;
+        }
+        #nav1 {
+            text-align: center;
+            border:1px solid deepskyblue;
+            font: 30px 楷体;
+            padding-right: 20px;
+            float: left;
+            background-color: deepskyblue;
+            text-decoration: deepskyblue;
+
+        }
+    </style>
+{% endblock %}
+<body>
+    {% block nav %}
+        <div id="nav1" style="margin-left: 32%;">
+            <a href="http://127.0.0.1:8000/">首页</a>
+        </div>
+        <div id="nav1">
+            <a href="{% url 'publisher:Publishers' %}">出版社</a>
+        </div>
+        <div id="nav1">
+            <a href="{% url 'book:books' %}">书籍</a>
+        </div>
+        <div id="nav1">
+            <a href="{% url 'author:authors' %}">作者</a>
+        </div>
+        <br/>
+
+    {% endblock %}
+    {% block content %}
+        <h3>This is Base Template</h3>
+    {% endblock %}
+    {% block footer %}
+        <p align="center">京ICP备11008151号 | 京公网安备11010802014853</p>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %}出版社{% endblock %}
+{% block content %}
+    {% for pubs in pub_pub %}
+        <h1><a href="{% url 'publisher:detail' pubs.id %}">{{ pubs.Pub_name }}</a></h1>
+    {% endfor %}
+{% endblock %}
